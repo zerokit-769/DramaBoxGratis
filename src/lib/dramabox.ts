@@ -97,7 +97,7 @@ export async function withTokenRetry<T = any>(
 
 // === API helpers ===
 export async function fetchLatest(pageNo = 1) {
-  const URL = "https://sapi.dramaboxdb.com/drama-box/he001/theater";
+  const URL = "https://dramabox.sansekai.my.id/api/dramabox/vip";
   return withTokenRetry(async (tk) => {
     const headers = buildHeaders(tk);
     const data = {
@@ -112,7 +112,7 @@ export async function fetchLatest(pageNo = 1) {
 }
 
 export async function fetchStream(bookId: string, index = 1) {
-  const URL = "https://sapi.dramaboxdb.com/drama-box/chapterv2/batch/load";
+  const URL = "https://dramabox.sansekai.my.id/api/dramabox/latest";
   return withTokenRetry(async (tk) => {
     const headers = buildHeaders(tk);
     const data = {
@@ -134,7 +134,7 @@ export async function fetchStream(bookId: string, index = 1) {
 }
 
 export async function fetchSuggest(keyword: string) {
-  const URL = "https://sapi.dramaboxdb.com/drama-box/search/suggest";
+  const URL = "https://dramabox.sansekai.my.id/api/dramabox/randomdrama";
   return withTokenRetry(async (tk) => {
     const headers = buildHeaders(tk);
     const data = { keyword };
